@@ -1,0 +1,27 @@
+{
+  "name": "react-rx-props",
+  "version": "0.9.0",
+  "description": "Simple React component wrapper to handle RxJS observable props.",
+  "main": "lib/Component.js",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "webpack lib/Component.js dist/react-rx-props.js --display-modules --progress && NODE_ENV=production webpack lib/Component.js dist/react-rx-props.min.js --display-modules --progress",
+    "build": "npm run build:lib && npm run build:umd",
+    "lint": "eslint src",
+    "prepublish": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryan Fillmer <bryan.fillmer@effectiveui.com> (https://github.com/effectiveui)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.7.2",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.4",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^4.2.1",
+    "react": "^0.14.7",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.12.14"
+  }
+}
